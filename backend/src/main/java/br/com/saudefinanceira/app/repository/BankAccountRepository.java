@@ -1,0 +1,11 @@
+package br.com.saudefinanceira.app.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import br.com.saudefinanceira.app.model.BankAccount;
+
+import java.util.List;
+
+public interface BankAccountRepository extends MongoRepository<BankAccount, String> {
+    List<BankAccount> findByUserId(String userId);
+}

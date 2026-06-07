@@ -1,0 +1,113 @@
+{
+  "version": "1.1",
+  "collections": [
+    {
+      "id": "4d7c8455-21bd-4d39-8f3a-5b85f5d1a8b2",
+      "name": "Saúde Financeira API",
+      "created": "2026-06-06T00:00:00.000Z",
+      "updated": "2026-06-06T00:00:00.000Z",
+      "requests": [
+        {
+          "id": "a1f7c4c2-7c14-4e56-9587-0b9e97d8d9de",
+          "name": "Auth / Register",
+          "url": "{{baseUrl}}/auth/register",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": {
+              "email": "user@example.com",
+              "password": "senha123"
+            }
+          }
+        },
+        {
+          "id": "d98c0bfd-89f3-4ae1-b7bf-a8a8ad164b35",
+          "name": "Auth / Login",
+          "url": "{{baseUrl}}/auth/login",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": {
+              "email": "user@example.com",
+              "password": "senha123"
+            }
+          }
+        },
+        {
+          "id": "c2a7c55e-f7b5-4a9d-bd72-4b3e3f1ad16e",
+          "name": "Category / Create",
+          "url": "{{baseUrl}}/categories?name=Moradia",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{jwtToken}}"
+            }
+          ]
+        },
+        {
+          "id": "b5d7f594-0325-4e6a-bfa2-9d3fb6b1db77",
+          "name": "Category / List",
+          "url": "{{baseUrl}}/categories",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{jwtToken}}"
+            }
+          ]
+        },
+        {
+          "id": "f1d4b3a2-77d5-487c-91c6-4cf08663fb14",
+          "name": "Transaction / Create",
+          "url": "{{baseUrl}}/transactions",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer {{jwtToken}}"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": {
+              "categoryId": "<category-id>",
+              "type": "EXPENSE",
+              "amount": 120.5,
+              "description": "Supermercado",
+              "date": "2026-06-06"
+            }
+          }
+        },
+        {
+          "id": "e3b2d7c1-1c0c-4f55-8bc9-3021a4f5b497",
+          "name": "Transaction / List",
+          "url": "{{baseUrl}}/transactions",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{jwtToken}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

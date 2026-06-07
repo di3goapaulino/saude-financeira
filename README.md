@@ -1,4 +1,14 @@
-# Saúde Financeira
+# Saúde Financeira 
+
+Mono repo, criado para estudos de engenharia de softwares. 
+Aplicando soluções para casos reais.
+
+### Release Notes 
+
+#### MVP 
+ - Cadastro/Login
+ - Dashboard com a saude financeira
+ - Cadastro das transações
 
 ## Como iniciar o projeto
 
